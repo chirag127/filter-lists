@@ -1,0 +1,29 @@
+! Title: chirag127 Custom — Analytics & Crash Reporters
+! Description: Analytics SDKs, crash reporters, telemetry NOT in OISD/AdGuard defaults
+! Updated: 2026-07-28
+!
+||a.nel.cloudflare.com^
+||aios.soinluck.com^
+||analytics-tcp.mintegral.net^
+||app-measurement.com^
+||billingapi.lecturenotes.in^
+||bugly.qcloud.com^
+||crashlytics.com^
+||crashlyticsreports-pa.googleapis.com^
+||display.io^
+||evt.splayerapp.com^
+||google-analytics.com^
+||in.appcenter.ms^
+||log1.happymod.com^
+||matomo.darken.eu^
+||omtrdc.net^
+||opentelemetry.io^
+||pay.hungama.com^
+||rayjump.com^
+||returnyoutubedislikeapi.com^
+||scorecardresearch.com^
+||sentry-cdn.com^
+||sentry.io^
+||ssl.google-analytics.com^
+||stat.tiara.kakao.com^
+||tcpay.in^

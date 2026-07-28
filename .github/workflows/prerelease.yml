@@ -3,7 +3,9 @@ name: prerelease
 on:
   push:
     branches: [main]
-    paths: ["*.txt"]
+    paths:
+      - "custom/**/*.txt"
+      - "output/*.txt"
   workflow_dispatch:
 
 permissions:
@@ -19,7 +21,7 @@ jobs:
         id: meta
         run: |
           set -euo pipefail
-          n=$(grep -cvE '^(#|$)' domains.txt)
+          n=$(grep -cvE '^(#|$)' output/domains.txt)
           echo "tag=snapshot-$(date -u +%Y.%m.%d-%H%M)" >> "$GITHUB_OUTPUT"
           echo "count=$n" >> "$GITHUB_OUTPUT"
 
@@ -29,14 +31,16 @@ jobs:
           tag_name: ${{ steps.meta.outputs.tag }}
           name: "Blocklist snapshot ${{ steps.meta.outputs.tag }}"
           body: |
-            Automated snapshot of the DNS blocklist — ${{ steps.meta.outputs.count }} domains, three formats attached.
+            Automated snapshot — ${{ steps.meta.outputs.count }} custom domains, three formats attached.
 
             Subscribe from the raw files on `main`, or pin this snapshot:
-            - `adblock.txt` — AdGuard / uBlock / Pi-hole
+            - `adblock.txt` — AdGuard / uBlock Origin / Pi-hole v6
             - `domains.txt` — NextDNS / plain resolvers
-            - `hosts.txt` — /etc/hosts / Pi-hole / StevenBlack
+            - `hosts.txt` — /etc/hosts / Pi-hole / AdGuard Home
+
+            Note: Enable OISD Full + AdGuard DNS Filter first; this list only adds what they miss.
           prerelease: true
           files: |
-            adblock.txt
-            domains.txt
-            hosts.txt
+            output/adblock.txt
+            output/domains.txt
+            output/hosts.txt

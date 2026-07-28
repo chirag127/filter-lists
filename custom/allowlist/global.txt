@@ -1,0 +1,6 @@
+! Title: chirag127 Custom — Global Allowlist
+! Description: Domains to always allow (overrides blocklist + default lists)
+! Updated: 2026-07-28
+!
+! Add entries below as needed:
+! @@||example.com^

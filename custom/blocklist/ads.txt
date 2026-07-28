@@ -1,0 +1,5 @@
+! Title: chirag127 Custom — Ad Loaders & Bid SDKs
+! Description: Ad loaders, bid SDKs NOT in OISD/AdGuard defaults
+! Updated: 2026-07-28
+!
+! Add entries here for ad networks/bid SDKs not already in OISD or AdGuard DNS Filter.

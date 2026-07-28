@@ -1,81 +1,90 @@
-# dns-filters
+# filter-lists
 
-[![Stars](https://img.shields.io/github/stars/chirag127/dns-filters?style=flat&logo=github)](https://github.com/chirag127/dns-filters/stargazers)
+[![Stars](https://img.shields.io/github/stars/chirag127/filter-lists?style=flat&logo=github)](https://github.com/chirag127/filter-lists/stargazers)
+[![License](https://img.shields.io/github/license/chirag127/filter-lists?style=flat)](LICENSE)
+[![Site](https://img.shields.io/badge/site-live-brightgreen?style=flat)](https://filter-lists.oriz.in/)
 
-Personal DNS blocklist — paywall engines, tracker SDKs, and ad loaders.
+Personal DNS + browser filter lists. Custom additions that supplement OISD and AdGuard DNS defaults.
 
-Site: [dns-filters.oriz.in](https://dns-filters.oriz.in)
+## Live Site
 
-## Files
+**https://filter-lists.oriz.in/**
 
-| File                         | Format                              | Compatible with                                                                   |
-| ---------------------------- | ----------------------------------- | --------------------------------------------------------------------------------- |
-| [`adblock.txt`](adblock.txt) | AdGuard/uBlock `\|\|domain^` syntax | AdGuard Home, AdGuard DNS custom rules, NextDNS custom, uBlock Origin, Pi-hole v6 |
-| [`domains.txt`](domains.txt) | Plain domain per line               | NextDNS custom blocklist URL, most resolvers                                      |
-| [`hosts.txt`](hosts.txt)     | `0.0.0.0 domain` hosts format       | `/etc/hosts`, Pi-hole, AdGuard Home, StevenBlack aggregator                       |
+## Philosophy
 
-## Raw URLs
+**Default lists first.** OISD (full) + AdGuard DNS Filter cover ~99% of blocking.
+This repo contains **only the custom entries not in those defaults**.
+
+### Enable these defaults everywhere first
+
+| List | URL |
+|------|-----|
+| OISD Full | `https://big.oisd.nl` |
+| AdGuard DNS Filter | `https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt` |
+
+Then subscribe to the custom list below.
+
+## Subscription URLs
+
+| Format | URL | Compatible with |
+|--------|-----|-----------------|
+| Adblock syntax | `https://raw.githubusercontent.com/chirag127/filter-lists/main/output/adblock.txt` | AdGuard (all), uBlock Origin, Pi-hole v6 |
+| Plain domains | `https://raw.githubusercontent.com/chirag127/filter-lists/main/output/domains.txt` | NextDNS custom, most resolvers |
+| Hosts file | `https://raw.githubusercontent.com/chirag127/filter-lists/main/output/hosts.txt` | /etc/hosts, Pi-hole, AdGuard Home |
+
+## Custom allowlist
 
 ```
-https://raw.githubusercontent.com/chirag127/dns-filters/main/adblock.txt
-https://raw.githubusercontent.com/chirag127/dns-filters/main/domains.txt
-https://raw.githubusercontent.com/chirag127/dns-filters/main/hosts.txt
+https://raw.githubusercontent.com/chirag127/filter-lists/main/custom/allowlist/global.txt
 ```
 
-## How to use
+## Repository structure
 
-### AdGuard Home
+```
+filter-lists/
+├── custom/
+│   ├── blocklist/
+│   │   ├── ads.txt          — ad loaders, bid SDKs
+│   │   ├── analytics.txt    — crash reporters, analytics
+│   │   ├── microsoft.txt    — Microsoft/Xbox telemetry
+│   │   ├── misc.txt         — remaining entries
+│   │   ├── mobile.txt       — mobile-specific trackers
+│   │   ├── paywall.txt      — paywall engines
+│   │   └── social.txt       — Facebook, consent banners
+│   └── allowlist/
+│       └── global.txt       — always-allow list
+├── output/                  — subscribe to these URLs (generated)
+│   ├── adblock.txt
+│   ├── domains.txt
+│   └── hosts.txt
+├── docs/                    — per-platform setup guides
+│   ├── nextdns.md
+│   ├── adguard-dns.md
+│   ├── adguard-home.md
+│   ├── adguard-extension.md
+│   ├── ublock-origin.md
+│   └── pihole.md
+└── scripts/
+    └── build.py             — regenerate output/ from custom/
+```
 
-Settings → Filters → DNS blocklists → Add blocklist → paste the `adblock.txt` raw URL.
+## Regenerating output/
 
-### NextDNS
+```bash
+python scripts/build.py
+```
 
-Security → Add a blocklist → Custom → paste the `domains.txt` raw URL.
+Run after editing any file in `custom/blocklist/`. Commit the updated `output/` files together.
 
-### Pi-hole
+## Setup guides
 
-Group Management → Adlists → paste the `adblock.txt` or `hosts.txt` raw URL.
-
-### uBlock Origin
-
-Dashboard → Filter lists → Import → paste the `adblock.txt` raw URL.
-
-## Domains blocked
-
-| Domain                           | Category                                 |
-| -------------------------------- | ---------------------------------------- |
-| `blueconic.net`                  | Paywall / metered-access engine          |
-| `*.cdn.registerdisney.go.com`    | Paywall SDK                              |
-| `*.cnv-medien.de`                | Paywall engine (German press)            |
-| `*.cxense.com`                   | Tracker / paywall analytics              |
-| `*.ev.lavanguardia.com`          | Paywall (La Vanguardia)                  |
-| `*.ev.mundodeportivo.com`        | Paywall (Mundo Deportivo)                |
-| `*.evolok.net`                   | Paywall engine                           |
-| `*.flowerstreatment.com`         | Paywall / metered access                 |
-| `*.guidecent.com`                | Paywall SDK                              |
-| `*.hadrianpaywall.com`           | Hadrian paywall engine                   |
-| `*.htlbid.com`                   | Ad bid loader                            |
-| `*.jerseyeveningpost.com`        | Paywall (Jersey Evening Post)            |
-| `*.js.matheranalytics.com`       | Paywall analytics (Mather Economics)     |
-| `*.js.pelcro.com`                | Pelcro paywall SDK                       |
-| `*.lapost.com`                   | Paywall                                  |
-| `*.loader.newsday.com`           | Paywall loader (Newsday)                 |
-| `*.lrb.co.uk`                    | Paywall (London Review of Books)         |
-| `*.moscout.com`                  | Paywall / metered access                 |
-| `*.olytics.omeda.com`            | Paywall analytics (Omeda)                |
-| `*.onecount.net`                 | OneCount paywall engine                  |
-| `*.paywall.correiodopovo.com.br` | Paywall (Correio do Povo)                |
-| `*.paywall.folha.uol.com.br`     | Paywall (Folha de S.Paulo)               |
-| `*.poool.fr`                     | Poool paywall engine (French press)      |
-| `*.qiota.com`                    | Qiota paywall SDK                        |
-| `*.rdhmag.com`                   | Paywall (RDH magazine)                   |
-| `*.sophi.io`                     | Sophi.io paywall engine (Globe and Mail) |
-| `*.steadyhq.com`                 | Steady subscription paywall              |
-| `*.theintercept.com`             | Paywall (The Intercept)                  |
-| `*.thetablet.org`                | Paywall (The Tablet)                     |
-| `*.zonda.clarin.com`             | Paywall (Clarín)                         |
-| `*.adconfig.wynk.in`             | Ad config SDK (Wynk)                     |
+- [NextDNS](docs/nextdns.md)
+- [AdGuard DNS](docs/adguard-dns.md)
+- [AdGuard Home](docs/adguard-home.md)
+- [AdGuard Extension](docs/adguard-extension.md)
+- [uBlock Origin](docs/ublock-origin.md)
+- [Pi-hole](docs/pihole.md)
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+MIT

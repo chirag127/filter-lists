@@ -1,0 +1,16 @@
+! Title: chirag127 Custom — Social & Consent
+! Description: Social trackers, consent banners, Facebook endpoints NOT in OISD/AdGuard defaults
+! Updated: 2026-07-28
+!
+||adservice.google.com^
+||connect.facebook.net^
+||cookielaw.org^
+||dit.whatsapp.net^
+||graph.facebook.com^
+||intercom.com^
+||intercom.io^
+||location.services.mozilla.com^
+||mqtt-mini.facebook.com^
+||patreon.com^
+||web.facebook.com^
+||webcache.googleusercontent.com^

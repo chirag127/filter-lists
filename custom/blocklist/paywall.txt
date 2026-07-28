@@ -1,0 +1,34 @@
+! Title: chirag127 Custom — Paywall Engines
+! Description: Paywall SDKs and metered-access engines NOT in OISD/AdGuard defaults
+! Updated: 2026-07-28
+!
+||blueconic.net^
+||cdn.registerdisney.go.com^
+||cnv-medien.de^
+||cxense.com^
+||ev.lavanguardia.com^
+||ev.mundodeportivo.com^
+||evolok.net^
+||flowerstreatment.com^
+||guidecent.com^
+||hadrianpaywall.com^
+||htlbid.com^
+||jerseyeveningpost.com^
+||js.matheranalytics.com^
+||js.pelcro.com^
+||lapost.com^
+||loader.newsday.com^
+||lrb.co.uk^
+||moscout.com^
+||olytics.omeda.com^
+||onecount.net^
+||paywall.correiodopovo.com.br^
+||paywall.folha.uol.com.br^
+||poool.fr^
+||qiota.com^
+||rdhmag.com^
+||sophi.io^
+||steadyhq.com^
+||theintercept.com^
+||thetablet.org^
+||zonda.clarin.com^

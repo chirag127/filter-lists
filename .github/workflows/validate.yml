@@ -3,9 +3,15 @@ name: validate
 on:
   push:
     branches: [main]
-    paths: ["*.txt", ".github/workflows/validate.yml"]
+    paths:
+      - "custom/**/*.txt"
+      - "output/*.txt"
+      - ".github/workflows/validate.yml"
   pull_request:
-    paths: ["*.txt", ".github/workflows/validate.yml"]
+    paths:
+      - "custom/**/*.txt"
+      - "output/*.txt"
+      - ".github/workflows/validate.yml"
   workflow_dispatch:
 
 permissions:
@@ -17,40 +23,48 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate blocklists (non-empty, format, no dups, in sync)
+      - name: Rebuild output/ and verify it matches committed files
+        run: |
+          set -euo pipefail
+          python scripts/build.py
+          git diff --exit-code output/ || {
+            echo "::error::output/ is out of sync — run scripts/build.py and commit"
+            exit 1
+          }
+
+      - name: Validate output formats
         run: |
           set -euo pipefail
           fail=0
           err(){ echo "::error::$1"; fail=1; }
 
-          for f in adblock.txt domains.txt hosts.txt; do
+          for f in output/adblock.txt output/domains.txt output/hosts.txt; do
             [ -s "$f" ] || err "$f missing or empty"
           done
           [ "$fail" -eq 0 ] || exit 1
 
-          # --- per-format regex ---
           # adblock: ! comments, blank, or ||domain^
-          grep -vE '^(!|$)' adblock.txt | grep -vE '^\|\|[a-z0-9._-]+\^$' \
+          grep -vE '^(!|$)' output/adblock.txt | grep -vE '^\|\|[a-z0-9._-]+\^$' \
             && err "adblock.txt has lines not matching '||domain^'" || true
           # domains: # comments, blank, or bare domain
-          grep -vE '^(#|$)' domains.txt | grep -vE '^[a-z0-9._-]+$' \
+          grep -vE '^(#|$)' output/domains.txt | grep -vE '^[a-z0-9._-]+$' \
             && err "domains.txt has lines not matching bare domain" || true
           # hosts: # comments, blank, or 0.0.0.0 domain
-          grep -vE '^(#|$)' hosts.txt | grep -vE '^0\.0\.0\.0 [a-z0-9._-]+$' \
+          grep -vE '^(#|$)' output/hosts.txt | grep -vE '^0\.0\.0\.0 [a-z0-9._-]+$' \
             && err "hosts.txt has lines not matching '0.0.0.0 domain'" || true
 
-          # --- normalize each to a sorted domain set ---
-          grep -E '^\|\|' adblock.txt | sed 's/^||//; s/\^$//' | sort > /tmp/ab.set
-          grep -vE '^(#|$)' domains.txt | sort > /tmp/dm.set
-          grep -E '^0\.0\.0\.0 ' hosts.txt | sed 's/^0\.0\.0\.0 //' | sort > /tmp/hs.set
+          # normalize to sorted domain sets
+          grep -E '^\|\|' output/adblock.txt | sed 's/^||//; s/\^$//' | sort > /tmp/ab.set
+          grep -vE '^(#|$)' output/domains.txt | sort > /tmp/dm.set
+          grep -E '^0\.0\.0\.0 ' output/hosts.txt | sed 's/^0\.0\.0\.0 //' | sort > /tmp/hs.set
 
-          # --- no duplicate domains within any file ---
+          # no duplicates within any file
           for s in ab dm hs; do
             dup=$(uniq -d "/tmp/$s.set" || true)
             [ -z "$dup" ] || err "duplicate domains in $s: $(echo "$dup" | tr '\n' ' ')"
           done
 
-          # --- three files in sync (identical domain sets) ---
+          # three files in sync
           diff /tmp/ab.set /tmp/dm.set > /tmp/d1 || { err "adblock vs domains differ"; cat /tmp/d1; }
           diff /tmp/ab.set /tmp/hs.set > /tmp/d2 || { err "adblock vs hosts differ"; cat /tmp/d2; }
 

@@ -1,0 +1,18 @@
+! Title: chirag127 Custom — Mobile Trackers
+! Description: Mobile-specific ad/tracker domains (Snaptube, Truecaller, etc.)
+! Updated: 2026-07-28
+!
+||ad-snaptube.app^
+||adconfig.splayerapp.com^
+||adconfig.wynk.in^
+||batchlogging4-noneu.truecaller.com^
+||mxaserver.mxplay.com^
+||p1-play.edge4k.com^
+||p2-play.edge4k.com^
+||play.kakao.com^
+||push.snaptube.app^
+||sensors.snaptube.app^
+||survey-noneu.truecaller.com^
+||t1-wg2vgaja.kgslb.com^
+||t1.daumcdn.net^
+||us04logfiles.zoom.us^
