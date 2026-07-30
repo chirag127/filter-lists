@@ -1,18 +1,42 @@
 ! Title: chirag127 Custom — Mobile Trackers
-! Description: Mobile-specific ad/tracker domains (Snaptube, Truecaller, etc.)
-! Updated: 2026-07-28
+! Description: Mobile-specific ad/tracker domains (Snaptube, Truecaller, Xiaomi/MIUI, etc.)
+! Updated: 2026-07-30
 !
+||9apps.com^
+||9appsapk.cc^
+||9appsinstall.com^
+||abroad.api.comm.intl.miui.com^
 ||ad-snaptube.app^
 ||adconfig.splayerapp.com^
 ||adconfig.wynk.in^
+||ads.appbundledownload.com^
+||api.accelerator.intl.miui.com^
+||apm-rum-ind.inf.miui.com^
 ||batchlogging4-noneu.truecaller.com^
+||cdn-game-lobby.v-mate.mobi^
+||data.mistat.india.xiaomi.com^
+||emo.v-mate.mobi^
+||feedback.india.miui.com^
+||globalnileapi.market.xiaomi.com^
+||i2-idm.api.io.mi.com^
+||idm.iot.mi.com^
+||jupiter.intl.sys.miui.com^
+||log.apk.v-mate.mobi^
 ||mxaserver.mxplay.com^
 ||p1-play.edge4k.com^
+||p1-play.kgslb.com^
 ||p2-play.edge4k.com^
+||p2-play.kgslb.com^
+||play-kakao-iy6fljvv.kgslb.com^
 ||play.kakao.com^
+||pubfinity.com^
 ||push.snaptube.app^
+||sb.scorecardresearch.com^
+||sdkconfig.ad.india.xiaomi.com^
 ||sensors.snaptube.app^
+||statusapi.micloud.xiaomi.net^
 ||survey-noneu.truecaller.com^
 ||t1-wg2vgaja.kgslb.com^
 ||t1.daumcdn.net^
+||tracking.india.miui.com^
 ||us04logfiles.zoom.us^

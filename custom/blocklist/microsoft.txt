@@ -1,14 +1,19 @@
 ! Title: chirag127 Custom — Microsoft Telemetry
 ! Description: Microsoft/Xbox telemetry endpoints NOT in OISD/AdGuard defaults
-! Updated: 2026-07-28
+! Updated: 2026-07-30
 !
+||ascstats.iobit.com^
 ||copilot-telemetry.githubusercontent.com^
 ||dc.services.visualstudio.com^
 ||default.exp-tas.com^
 ||device.auth.xboxlive.com^
+||downloads.hpanalytics.net^
+||footprintdns.com^
 ||lfghub-anonymous.xboxlive.com^
 ||mobile.events.data.microsoft.com^
 ||profile.xboxlive.com^
+||self.events.data.microsoft.com^
+||stats.iobit.com^
 ||umwatson.events.data.microsoft.com^
 ||v10.events.data.microsoft.com^
 ||v20.events.data.microsoft.com^

@@ -1,0 +1,45 @@
+{
+  "denylist": [],
+  "allowlist": [],
+  "parentalcontrol": {
+    "safeSearch": false,
+    "youtubeRestrictedMode": false,
+    "blockBypass": false,
+    "services": [],
+    "categories": []
+  },
+  "privacy": {
+    "blockDisguised": false,
+    "allowAffiliate": false,
+    "blocklists": ["adguard-dns-filter"],
+    "natives": []
+  },
+  "security": {
+    "threatIntelligenceFeeds": true,
+    "aiThreatDetection": false,
+    "googleSafeBrowsing": true,
+    "cryptojacking": true,
+    "dnsRebinding": false,
+    "homograph": true,
+    "typosquatting": true,
+    "dga": true,
+    "nrd": false,
+    "parked": false,
+    "csam": true,
+    "blocked_tlds": []
+  },
+  "settings": {
+    "name": "profile-5",
+    "logging": true,
+    "logging_disable_query": false,
+    "logging_disable_client": false,
+    "logging_retention": 63072000,
+    "logging_location": "ch",
+    "blockPage": true,
+    "ecs": true,
+    "cacheBoost": false,
+    "cnameFlattening": false,
+    "handshake": false,
+    "rewrites": []
+  }
+}

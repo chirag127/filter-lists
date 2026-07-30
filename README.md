@@ -48,11 +48,14 @@ filter-lists/
 │   │   ├── analytics.txt    — crash reporters, analytics
 │   │   ├── microsoft.txt    — Microsoft/Xbox telemetry
 │   │   ├── misc.txt         — remaining entries
-│   │   ├── mobile.txt       — mobile-specific trackers
+│   │   ├── mobile.txt       — mobile-specific trackers (incl. Xiaomi/MIUI)
 │   │   ├── paywall.txt      — paywall engines
 │   │   └── social.txt       — Facebook, consent banners
 │   └── allowlist/
 │       └── global.txt       — always-allow list
+├── nextdns/
+│   └── config/              — sanitized NextDNS profile exports (6 profiles)
+│       └── README.md        — import instructions
 ├── output/                  — subscribe to these URLs (generated)
 │   ├── adblock.txt
 │   ├── domains.txt
@@ -65,7 +68,8 @@ filter-lists/
 │   ├── ublock-origin.md
 │   └── pihole.md
 └── scripts/
-    └── build.py             — regenerate output/ from custom/
+    ├── build.py             — regenerate output/ from custom/
+    └── strip-wildcards.py   — strip *. prefix from NextDNS raw export format
 ```
 
 ## Regenerating output/

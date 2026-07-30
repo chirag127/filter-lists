@@ -1,0 +1,67 @@
+{
+  "security": {
+    "threatIntelligenceFeeds": true,
+    "aiThreatDetection": false,
+    "googleSafeBrowsing": true,
+    "cryptojacking": true,
+    "dnsRebinding": false,
+    "homograph": true,
+    "typosquatting": true,
+    "dga": true,
+    "nrd": false,
+    "parked": true,
+    "csam": true,
+    "blocked_tlds": []
+  },
+  "allowlist": [],
+  "privacy": {
+    "blockDisguised": true,
+    "allowAffiliate": false,
+    "blocklists": ["adguard-dns-filter", "nextdns-recommended", "oisd"],
+    "natives": []
+  },
+  "denylist": [
+    { "domain": "adduplex.com", "active": true },
+    { "domain": "gameplayapi.intel.com", "active": true },
+    { "domain": "sb.scorecardresearch.com", "active": true },
+    { "domain": "footprintdns.com", "active": true },
+    { "domain": "gameplay.intel.com", "active": true },
+    { "domain": "linkedin.com", "active": true },
+    { "domain": "umwatson.events.data.microsoft.com", "active": true },
+    { "domain": "v20.events.data.microsoft.com", "active": true },
+    { "domain": "self.events.data.microsoft.com", "active": true },
+    { "domain": "ascstats.iobit.com", "active": true },
+    { "domain": "stats.iobit.com", "active": true },
+    { "domain": "downloads.hpanalytics.net", "active": true },
+    { "domain": "v10.events.data.microsoft.com", "active": true },
+    { "domain": "account.xbox.com", "active": true }
+  ],
+  "parentalcontrol": {
+    "safeSearch": true,
+    "youtubeRestrictedMode": true,
+    "blockBypass": false,
+    "services": [
+      { "id": "skype", "active": true }
+    ],
+    "categories": [
+      { "id": "gambling", "recreation": false, "active": true },
+      { "id": "porn", "recreation": false, "active": true },
+      { "id": "dating", "recreation": false, "active": true },
+      { "id": "social-networks", "recreation": false, "active": true }
+    ]
+  },
+  "settings": {
+    "name": "profile-2",
+    "logging": true,
+    "logging_disable_query": false,
+    "logging_disable_client": false,
+    "logging_retention": 63072000,
+    "logging_location": "ch",
+    "blockPage": false,
+    "ecs": true,
+    "cacheBoost": false,
+    "cnameFlattening": false,
+    "handshake": false,
+    "rewrites": []
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "settings": {
+    "name": "profile-3",
+    "logging": true,
+    "logging_disable_query": false,
+    "logging_disable_client": false,
+    "logging_retention": 63072000,
+    "logging_location": "ch",
+    "blockPage": false,
+    "ecs": true,
+    "cacheBoost": false,
+    "cnameFlattening": false,
+    "handshake": false,
+    "rewrites": []
+  },
+  "parentalcontrol": {
+    "safeSearch": true,
+    "youtubeRestrictedMode": false,
+    "blockBypass": false,
+    "services": [],
+    "categories": [
+      { "id": "porn", "recreation": false, "active": true },
+      { "id": "gambling", "recreation": false, "active": true },
+      { "id": "dating", "recreation": false, "active": true },
+      { "id": "social-networks", "recreation": false, "active": true }
+    ]
+  },
+  "denylist": [
+    { "domain": "3gppnetwork.org", "active": true },
+    { "domain": "globalnileapi.market.xiaomi.com", "active": true },
+    { "domain": "apm-rum-ind.inf.miui.com", "active": true },
+    { "domain": "statusapi.micloud.xiaomi.net", "active": true },
+    { "domain": "log1.happymod.com", "active": true },
+    { "domain": "ads.appbundledownload.com", "active": true },
+    { "domain": "metric.gstatic.com", "active": true },
+    { "domain": "in.appcenter.ms", "active": true },
+    { "domain": "ssl.google-analytics.com", "active": true },
+    { "domain": "cdn-game-lobby.v-mate.mobi", "active": true },
+    { "domain": "emo.v-mate.mobi", "active": true },
+    { "domain": "payu.in", "active": true },
+    { "domain": "pay.hungama.com", "active": true },
+    { "domain": "stat1.hungama.ind.in", "active": true },
+    { "domain": "9apps.com", "active": true },
+    { "domain": "mqtt-mini.facebook.com", "active": true },
+    { "domain": "connect.facebook.net", "active": true },
+    { "domain": "patreon.com", "active": true },
+    { "domain": "app-measurement.com", "active": true },
+    { "domain": "scorecardresearch.com", "active": true },
+    { "domain": "i2-idm.api.io.mi.com", "active": true },
+    { "domain": "google-analytics.com", "active": true },
+    { "domain": "bugly.qcloud.com", "active": true },
+    { "domain": "abroad.api.comm.intl.miui.com", "active": true },
+    { "domain": "api.accelerator.intl.miui.com", "active": true },
+    { "domain": "9appsinstall.com", "active": true },
+    { "domain": "crashlytics.com", "active": true },
+    { "domain": "dit.whatsapp.net", "active": true },
+    { "domain": "sensors.snaptube.app", "active": true },
+    { "domain": "ad-snaptube.app", "active": true },
+    { "domain": "idm.iot.mi.com", "active": true },
+    { "domain": "9appsapk.cc", "active": true },
+    { "domain": "intercom.com", "active": true },
+    { "domain": "graph.facebook.com", "active": true },
+    { "domain": "data.mistat.india.xiaomi.com", "active": true },
+    { "domain": "sentry-cdn.com", "active": true },
+    { "domain": "tracking.india.miui.com", "active": true },
+    { "domain": "jupiter.intl.sys.miui.com", "active": true },
+    { "domain": "sdkconfig.ad.india.xiaomi.com", "active": true },
+    { "domain": "web.facebook.com", "active": true },
+    { "domain": "log.apk.v-mate.mobi", "active": true },
+    { "domain": "webcache.googleusercontent.com", "active": true },
+    { "domain": "intercom.io", "active": true },
+    { "domain": "display.io", "active": true },
+    { "domain": "opentelemetry.io", "active": true },
+    { "domain": "tcpay.in", "active": true }
+  ],
+  "allowlist": [
+    { "domain": "amazon-adsystem.com", "active": true },
+    { "domain": "reddit.com", "active": true }
+  ],
+  "privacy": {
+    "blockDisguised": true,
+    "allowAffiliate": false,
+    "blocklists": ["adguard-dns-filter", "oisd", "nextdns-recommended"],
+    "natives": [
+      { "id": "xiaomi" }
+    ]
+  },
+  "security": {
+    "threatIntelligenceFeeds": true,
+    "aiThreatDetection": false,
+    "googleSafeBrowsing": true,
+    "cryptojacking": true,
+    "dnsRebinding": false,
+    "homograph": true,
+    "typosquatting": true,
+    "dga": true,
+    "nrd": false,
+    "parked": true,
+    "csam": true,
+    "blocked_tlds": []
+  }
+}

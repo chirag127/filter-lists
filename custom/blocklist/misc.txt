@@ -1,5 +1,7 @@
 ! Title: chirag127 Custom — Miscellaneous
 ! Description: Remaining entries not fitting other categories
-! Updated: 2026-07-28
+! Updated: 2026-07-30
 !
-! Add entries here that don't belong in other category files.
+||3gppnetwork.org^
+||juspay.in^
+||payu.in^

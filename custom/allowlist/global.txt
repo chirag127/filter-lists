@@ -1,6 +1,63 @@
 ! Title: chirag127 Custom — Global Allowlist
 ! Description: Domains to always allow (overrides blocklist + default lists)
-! Updated: 2026-07-28
+! Updated: 2026-07-30
 !
 ! Add entries below as needed:
 ! @@||example.com^
+@@||a.nel.cloudflare.com^
+@@||academia.edu^
+@@||adguard.com^
+@@||adregain.com^
+@@||adtidy.org^
+@@||ajay.app^
+@@||autopagerize.net^
+@@||bittorrent.am^
+@@||bt4g.com^
+@@||bugsnag.com^
+@@||bountysource.com^
+@@||buymeacoffee.com^
+@@||catchjs.com^
+@@||cinehub.wtf^
+@@||download.cnet.com^
+@@||doubleclick.net^
+@@||engineering.fb.com^
+@@||ggpht.com^
+@@||githubassets.com^
+@@||github.io^
+@@||glitchtip.com^
+@@||gmail.com^
+@@||goodreads.com^
+@@||google.com^
+@@||googleapis.com^
+@@||googleusercontent.com^
+@@||googlevideo.com^
+@@||greasyfork.org^
+@@||gstatic.com^
+@@||hg.adblockplus.org^
+@@||hugedomains.com^
+@@||liberapay.com^
+@@||nextdns.io^
+@@||opencollective.com^
+@@||parking.godaddy.com^
+@@||paypal.com^
+@@||paypal.me^
+@@||patreon.com^
+@@||raw.githubusercontent.com^
+@@||reddit.com^
+@@||research.fb.com^
+@@||researchgate.net^
+@@||rollbar.com^
+@@||sentry.dev^
+@@||sentry.io^
+@@||shelljacket.us^
+@@||timetravel.mementoweb.org^
+@@||torrentseeker.com^
+@@||tubeoffline.com^
+@@||us-central1-jumpcutbackend.cloudfunctions.net^
+@@||vardhaman.org^
+@@||webcache.googleusercontent.com^
+@@||wikimedia.org^
+@@||www.gstatic.com^
+@@||ycombinator.com^
+@@||youtube.com^
+@@||ytimg.com^

@@ -1,0 +1,56 @@
+{
+  "security": {
+    "threatIntelligenceFeeds": true,
+    "aiThreatDetection": false,
+    "googleSafeBrowsing": true,
+    "cryptojacking": true,
+    "dnsRebinding": false,
+    "homograph": true,
+    "typosquatting": true,
+    "dga": true,
+    "nrd": false,
+    "parked": true,
+    "csam": true,
+    "blocked_tlds": []
+  },
+  "settings": {
+    "name": "profile-4",
+    "logging": true,
+    "logging_disable_query": false,
+    "logging_disable_client": false,
+    "logging_retention": 63072000,
+    "logging_location": "ch",
+    "blockPage": true,
+    "ecs": true,
+    "cacheBoost": false,
+    "cnameFlattening": false,
+    "handshake": false,
+    "rewrites": []
+  },
+  "allowlist": [],
+  "privacy": {
+    "blockDisguised": true,
+    "allowAffiliate": false,
+    "blocklists": ["adguard-dns-filter"],
+    "natives": []
+  },
+  "denylist": [
+    { "domain": "alive.github.com", "active": true },
+    { "domain": "bountysource.com", "active": true },
+    { "domain": "patreon.com", "active": true },
+    { "domain": "parking.godaddy.com", "active": true },
+    { "domain": "hugedomains.com", "active": true },
+    { "domain": "paypal.com", "active": true },
+    { "domain": "buymeacoffee.com", "active": true },
+    { "domain": "paypal.me", "active": true },
+    { "domain": "a.nel.cloudflare.com", "active": true },
+    { "domain": "webcache.googleusercontent.com", "active": true }
+  ],
+  "parentalcontrol": {
+    "safeSearch": false,
+    "youtubeRestrictedMode": false,
+    "blockBypass": false,
+    "services": [],
+    "categories": []
+  }
+}
